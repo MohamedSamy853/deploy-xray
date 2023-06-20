@@ -4,8 +4,7 @@ numpy==1.23.5
 torchvision==0.15.2
 pip==23.1.2
 Pillow
-flask
-json
+flask>=2.0.0
 gdown
 gunicorn==20.0.4
 itsdangerous==1.1.0
