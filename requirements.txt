@@ -5,8 +5,8 @@ torchvision==0.15.2
 pip==23.1.2
 Pillow
 flask==2.3.2
-json==2.0.9
-gdown==4.7.1
+json
+gdown
 gunicorn==20.0.4
 itsdangerous==1.1.0
 Jinja2==2.11.3
