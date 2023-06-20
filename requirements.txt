@@ -2,7 +2,7 @@ click==7.1.2
 torch==2.0.1
 numpy==1.23.5
 torchvision==0.15.2
-PIL==9.4.0
+PIL
 flask==2.3.2
 json==2.0.9
 gdown==4.7.1
