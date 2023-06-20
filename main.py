@@ -4,11 +4,7 @@ from torch import nn
 from torchvision import models , transforms
 from PIL import Image
 from flask import Flask , request , jsonify
-import json
-import ssl
 import gdown
-ssl._create_default_https_context = ssl._create_unverified_context
-
 url = 'https://drive.google.com/file/d/1EzFM9aKDidqJZMu4y15ohM22IzVPxwRd/view?usp=sharing'
 output = 'model_state.pth'
 gdown.download(url, output, quiet=False, use_cookies=False , fuzzy=True)
