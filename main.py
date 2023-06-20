@@ -4,6 +4,8 @@ from torch import nn
 from torchvision import models , transforms
 from PIL import Image
 from flask import Flask , request , jsonify
+import subprocess
+subprocess.run(['python','-m','pip', 'install', '--upgrade', '--no-cache-dir', 'gdown'])
 import gdown
 url = 'https://drive.google.com/file/d/1EzFM9aKDidqJZMu4y15ohM22IzVPxwRd/view?usp=sharing'
 output = 'model_state.pth'
