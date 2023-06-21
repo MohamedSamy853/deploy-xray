@@ -11,6 +11,8 @@ url = 'https://drive.google.com/file/d/1EzFM9aKDidqJZMu4y15ohM22IzVPxwRd/view?us
 output = 'model_state.pth'
 if not os.path.isfile(output):
      subprocess.run(['python','-m','pip', 'install', '--upgrade', '--no-cache-dir', 'gdown'])
+     port = os.getenv("PORT", default=8000)
+     subprocess.run(["gunicorn","--workers", "2", "--timeout", "1000", "--bind", f"0.0.0.0:{port}", "wsgi:app"])
      gdown.download(url, output, quiet=False, use_cookies=False , fuzzy=True)
      
 index2label ={0: 'Infiltration',
