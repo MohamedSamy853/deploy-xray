@@ -6,6 +6,7 @@ from PIL import Image
 from flask import Flask , request , jsonify
 import subprocess
 import gdown
+import os
 url = 'https://drive.google.com/file/d/1EzFM9aKDidqJZMu4y15ohM22IzVPxwRd/view?usp=sharing'
 output = 'model_state.pth'
 if not os.path.isfile(output):
