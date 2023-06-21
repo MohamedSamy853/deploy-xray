@@ -5,11 +5,13 @@ from torchvision import models , transforms
 from PIL import Image
 from flask import Flask , request , jsonify
 import subprocess
-subprocess.run(['python','-m','pip', 'install', '--upgrade', '--no-cache-dir', 'gdown'])
 import gdown
 url = 'https://drive.google.com/file/d/1EzFM9aKDidqJZMu4y15ohM22IzVPxwRd/view?usp=sharing'
 output = 'model_state.pth'
-gdown.download(url, output, quiet=False, use_cookies=False , fuzzy=True)
+if not os.path.isfile(output):
+     subprocess.run(['python','-m','pip', 'install', '--upgrade', '--no-cache-dir', 'gdown'])
+     gdown.download(url, output, quiet=False, use_cookies=False , fuzzy=True)
+     
 index2label ={0: 'Infiltration',
  1: 'Atelectasis',
  2: 'Effusion',
