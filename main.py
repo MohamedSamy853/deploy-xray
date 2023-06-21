@@ -104,4 +104,6 @@ def predict():
     
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=8000))
+    port = os.getenv("PORT", default=8000)
+    subprocess.run(["gunicorn","--workers", "3", "--timeout", "1000", "--bind", f"0.0.0.0:{port}", "wsgi:app"])
+    app.run(debug=True, port=port)
